@@ -128,7 +128,7 @@ fn record_manager(demons: &[Demon]) -> Markup {
                             }
                         }
 
-                        iframe."ratio-16-9"#record-video style="width:90%; margin: 15px 5%" allowfullscreen="" {"Video"}
+                        iframe."ratio-16-9"#record-video style="width:90%; margin: 15px 5%" allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin" {"Video"}
                         p.info-red.output style = "margin: 10px" {}
                         p.info-green.output style = "margin: 10px" {}
                         div.stats-container.flex.space  {

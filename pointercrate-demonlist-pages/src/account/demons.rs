@@ -65,7 +65,7 @@ impl AccountPageTab for DemonsTab {
                                     i.fa.fa-pencil-alt.clickable #demon-name-pen aria-hidden = "true" {} (PreEscaped("&nbsp;")) i #demon-demon-name {}
                                 }
 
-                                iframe."ratio-16-9"#demon-video style="width:90%; margin: 15px 5%" allowfullscreen="" {"Verification Video"}
+                                iframe."ratio-16-9"#demon-video style="width:90%; margin: 15px 5%" allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin" {"Verification Video"}
                                 p.info-red.output style = "margin: 10px" {}
                                 p.info-green.output style = "margin: 10px" {}
                                 div.stats-container.flex.space  {

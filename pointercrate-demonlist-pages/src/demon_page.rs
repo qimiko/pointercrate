@@ -244,7 +244,7 @@ impl DemonPage {
                 }
                 @if let Some(ref video) = self.data.demon.video {
                     @if let Some(embedded_video) = embed(video) {
-                        iframe."ratio-16-9"."js-delay-attr" style="width:90%; margin: 15px 5%" allowfullscreen="" data-attr = "src" data-attr-value = (embedded_video) {"Verification Video"}
+                        iframe."ratio-16-9"."js-delay-attr" style="width:90%; margin: 15px 5%" allowfullscreen="" data-attr = "src" data-attr-value = (embedded_video) referrerpolicy="strict-origin-when-cross-origin" {"Verification Video"}
                     }
                 }
                 div.underlined.pad.flex.wrap #level-info {

@@ -197,7 +197,7 @@ impl AccountPageTab for ListIntegrationTab {
                         p {
                             "Clicking a claim in the 'Manage Claims' panel will pull up a random video of an approved record by the claimed player."
                         }
-                        iframe."ratio-16-9"#claim-video style="width:100%;" allowfullscreen="" {}
+                        iframe."ratio-16-9"#claim-video style="width:100%;" allowfullscreen="" referrerpolicy="strict-origin-when-cross-origin" {}
                     }
                 }
             }
