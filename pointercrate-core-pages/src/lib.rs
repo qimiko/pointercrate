@@ -52,7 +52,7 @@ impl PageConfiguration {
             head: Head::new(default_head_html)
                 .meta("og:site_name", site_name)
                 .meta("og:type", "website")
-                .meta("referrer", "no-referrer")
+                // .meta("referrer", "no-referrer")
                 .meta("viewport", "initial-scale=1, maximum-scale=1")
                 .script("https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js")
                 .script("https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js")
