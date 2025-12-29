@@ -7,7 +7,7 @@ use dash_rs::{
     },
     request::{
         level::{LevelRequest, LevelRequestType, LevelsRequest, SearchFilters},
-        GD_SERVER_ENDPOINT_BASE_URL
+        GD_SERVER_ENDPOINT_BASE_URL,
     },
     response::{parse_download_gj_level_response, parse_get_gj_levels_response},
 };
