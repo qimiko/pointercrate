@@ -58,6 +58,18 @@ fn demon_panel(demon: &Demon, current_position: Option<i16>) -> Markup {
     }
 }
 
+fn migration_panel() -> Markup {
+    html! {
+        div.panel.fade.medium-gray style="align-items: center;" {
+            "The 1.9 GDPS Demon List has moved. Welcome to "
+            b {
+                "demonlist.19gdps.com"
+            }
+            "!"
+        }
+    }
+}
+
 impl From<OverviewPage> for PageFragment {
     fn from(page: OverviewPage) -> Self {
         use pointercrate_core_pages::{versioned_import, with_version_string};
@@ -135,6 +147,8 @@ impl OverviewPage {
             div.flex.m-center.container {
                 main.left {
                     (self.time_machine)
+                    (migration_panel())
+
                     (RecordSubmitter::new(self.submitter_initially_visible, &self.demonlist))
 
                     @match &self.time_machine {
