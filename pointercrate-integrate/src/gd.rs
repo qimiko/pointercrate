@@ -5,7 +5,10 @@ use dash_rs::{
         song::{MainSong, NewgroundsSong},
         GameVersion,
     },
-    request::level::{LevelRequest, LevelRequestType, LevelsRequest, SearchFilters},
+    request::{
+        level::{LevelRequest, LevelRequestType, LevelsRequest, SearchFilters},
+        GD_SERVER_ENDPOINT_BASE_URL
+    },
     response::{parse_download_gj_level_response, parse_get_gj_levels_response},
 };
 use log::{error, trace};
@@ -144,6 +147,8 @@ pub struct GeometryDashConnector {
 
 impl GeometryDashConnector {
     pub fn new(pool: Pool<Postgres>) -> Self {
+        GD_SERVER_ENDPOINT_BASE_URL.get_or_init(|| "https://19gdps.com/gdapi/".to_string());
+
         GeometryDashConnector {
             pool,
             http_client: Client::new(),

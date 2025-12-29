@@ -7,7 +7,7 @@ edition.workspace = true
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-sqlx = { version = "0.7", default-features = false, features = [ "runtime-tokio-native-tls", "macros", "postgres", "chrono" ] }
+sqlx = { version = "0.8", default-features = false, features = [ "runtime-tokio-native-tls", "macros", "postgres", "chrono" ] }
 bincode = "1.3.1"
 reqwest = "0.12.*"
 futures = "0.3.8"
@@ -20,5 +20,5 @@ governor = "0.6.3"
 nonzero_ext = "0.3.0"
 
 [dependencies.dash-rs]
-git = "https://github.com/qimiko/dash-rs"
-rev = "21b8e86aa3ffe9ba4ba4bfd147b94abf2afa50ef"
+git = "https://github.com/stadust/dash-rs"
+rev = "397c4730d7789668bd6a8ab5a13ec9b826cd3b43"
