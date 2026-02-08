@@ -216,7 +216,7 @@ pub async fn patch(
 
     auth.commit().await?;
 
-    tokio::spawn(execute_webhook(webhook_status_embed(&record)));
+    tokio::spawn(execute_webhook(webhook_status_embed(&record, &auth.user.into_inner().name)));
 
     Ok(Tagged(record))
 }
@@ -404,7 +404,7 @@ fn webhook_embed(record: &FullRecord) -> serde_json::Value {
     payload
 }
 
-fn webhook_status_embed(record: &FullRecord) -> serde_json::Value {
+fn webhook_status_embed(record: &FullRecord, edited_by: &str) -> serde_json::Value {
     let payload = serde_json::json!({
         "content": format!("**Record edited! ID: {}**", record.id),
         "embeds": [
@@ -415,6 +415,9 @@ fn webhook_status_embed(record: &FullRecord) -> serde_json::Value {
                 "author": {
                     "name": format!("Owner: {} (ID: {})", record.player.name, record.player.id),
                     "url": record.video
+                },
+                "footer": {
+                    "text": format!("Edited by {}", edited_by),
                 },
             }
         ]
