@@ -214,9 +214,9 @@ pub async fn patch(
         .apply_patch(patch.0, &mut auth.connection)
         .await?;
 
-    auth.commit().await?;
+    tokio::spawn(execute_webhook(webhook_status_embed(&record, &auth.user.inner().name)));
 
-    tokio::spawn(execute_webhook(webhook_status_embed(&record, &auth.user.into_inner().name)));
+    auth.commit().await?;
 
     Ok(Tagged(record))
 }
